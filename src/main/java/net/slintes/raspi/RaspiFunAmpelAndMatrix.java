@@ -37,7 +37,7 @@ public class RaspiFunAmpelAndMatrix {
 
                     switch (color){
                         case 0: ledColor= Adafruit8x8LEDMatrix.LedColor.RED; ampelState = Ampel.State.RED; break;
-                        case 1: ledColor= Adafruit8x8LEDMatrix.LedColor.YELLOW; ampelState = Ampel.State.RED_YELLOW; break;
+                        case 1: ledColor= Adafruit8x8LEDMatrix.LedColor.YELLOW; ampelState = Ampel.State.YELLOW; break;
                         case 2: ledColor= Adafruit8x8LEDMatrix.LedColor.GREEN; ampelState = Ampel.State.GREEN; break;
                         default: ledColor= Adafruit8x8LEDMatrix.LedColor.OFF; ampelState = Ampel.State.OFF;
                     }
