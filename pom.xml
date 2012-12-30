@@ -39,7 +39,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>net.slintes.raspiAmpel.RaspiFunAmpelAndMatrix</mainClass>
+                            <mainClass>net.slintes.raspiFun.RaspiFunAmpelAndMatrix</mainClass>
                         </manifest>
                     </archive>
                     <descriptor>src/main/assembly/assembly.xml</descriptor>
