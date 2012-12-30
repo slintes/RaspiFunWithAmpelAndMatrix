@@ -6,19 +6,19 @@
 
     <groupId>net.slintes.raspi</groupId>
     <artifactId>RaspiFun</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
 
     <dependencies>
         <dependency>
             <groupId>net.slintes.raspi</groupId>
             <artifactId>Ampel</artifactId>
-            <version>0.2</version>
+            <version>0.3</version>
         </dependency>
 
         <dependency>
             <groupId>net.slintes.raspi</groupId>
             <artifactId>AdafruitLEDBackPack</artifactId>
-            <version>0.2.1</version>
+            <version>0.3</version>
         </dependency>
 
     </dependencies>
@@ -39,7 +39,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>net.slintes.raspi.RaspiFunAmpelAndMatrix</mainClass>
+                            <mainClass>net.slintes.raspiAmpel.RaspiFunAmpelAndMatrix</mainClass>
                         </manifest>
                     </archive>
                     <descriptor>src/main/assembly/assembly.xml</descriptor>

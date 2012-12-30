@@ -1,4 +1,7 @@
-package net.slintes.raspi;
+package net.slintes.raspiFun;
+
+import net.slintes.raspiAmpel.Ampel;
+import net.slintes.raspiAmpel.AmpelFactory;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,7 +22,7 @@ public class RaspiFunAmpel {
     public static void main(String[] args) {
 
 
-        Ampel ampel = new Ampel(GPIO_PIN_RED, GPIO_PIN_YELLOW, GPIO_PIN_GREEN);
+        Ampel ampel = AmpelFactory.createAmpel(GPIO_PIN_RED, GPIO_PIN_YELLOW, GPIO_PIN_GREEN);
 
         int durationLong = 2000;
         int durationShort= 800;
@@ -31,9 +34,8 @@ public class RaspiFunAmpel {
                 new StateAndDuration(Ampel.State.YELLOW, durationLong)};
 
         while(true){
-            for (int i=0, length=stateAndDurations.length; i<length; i++){
+            for (StateAndDuration stateAndDuration : stateAndDurations){
 
-                StateAndDuration stateAndDuration = stateAndDurations[i];
                 ampel.setState(stateAndDuration.state);
 
                 try {
