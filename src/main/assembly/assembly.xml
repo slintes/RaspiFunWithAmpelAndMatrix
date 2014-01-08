@@ -31,8 +31,7 @@
             <scope>runtime</scope>
             <!-- exclude so -->
             <excludes>
-                <exclude>com.pi4j:pi4j-native:so:hard-float:*</exclude>
-                <exclude>com.pi4j:pi4j-native:so:soft-float:*</exclude>
+                <exclude>com.pi4j:pi4j-native:so</exclude>
             </excludes>
         </dependencySet>
     </dependencySets>

@@ -22,7 +22,7 @@
 
     <groupId>net.slintes.raspi</groupId>
     <artifactId>RaspiFun</artifactId>
-    <version>0.2</version>
+    <version>0.3</version>
 
     <dependencies>
         <dependency>
@@ -34,7 +34,7 @@
         <dependency>
             <groupId>net.slintes.raspi</groupId>
             <artifactId>AdafruitLEDBackPack</artifactId>
-            <version>0.3</version>
+            <version>0.4</version>
         </dependency>
 
     </dependencies>
@@ -55,7 +55,8 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>net.slintes.raspiFun.RaspiFunAmpelAndMatrix</mainClass>
+                            <!--<mainClass>net.slintes.raspiFun.RaspiFunAmpelAndMatrix</mainClass>-->
+                            <mainClass>net.slintes.raspiFun.RaspiFunText</mainClass>
                         </manifest>
                     </archive>
                     <descriptor>src/main/assembly/assembly.xml</descriptor>
@@ -82,7 +83,7 @@
     <distributionManagement>
         <repository>
             <id>raspi</id>
-            <url>scp://pi:rr@raspberrypi.local/home/pi/raspiFun</url>
+            <url>scp://pi:rr@192.168.121.238/home/pi/raspiFun</url>
         </repository>
     </distributionManagement>
 

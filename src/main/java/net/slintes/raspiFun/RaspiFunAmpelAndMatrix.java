@@ -19,6 +19,7 @@ package net.slintes.raspiFun;
 import net.slintes.raspiAmpel.Ampel;
 import net.slintes.raspiAmpel.AmpelFactory;
 import net.slintes.raspiMatrix.AdafruitLEDBackPack;
+import net.slintes.raspiMatrix.LEDBackPack;
 import net.slintes.raspiMatrix.LEDMatrix;
 import net.slintes.raspiMatrix.LEDMatrixFactory;
 
@@ -44,7 +45,7 @@ public class RaspiFunAmpelAndMatrix {
     public static void main(String[] args) {
 
         LEDMatrix leds = LEDMatrixFactory.createLEDMatrix(I2C_BUS_NR, LED_PACK_ADDRESS);
-        leds.setBlinkRate(AdafruitLEDBackPack.BlinkRate.TWO_HZ);
+        leds.setBlinkRate(AdafruitLEDBackPack.BlinkRate.BLINK_OFF);
 
         Ampel ampel = AmpelFactory.createAmpel(GPIO_PIN_RED, GPIO_PIN_YELLOW, GPIO_PIN_GREEN);
 
@@ -53,7 +54,7 @@ public class RaspiFunAmpelAndMatrix {
                 for (int col = 0; col < 8; col++) {
 
                     // get some "random" color
-                    int color = (row/2 + col/3) % 3;
+                    int color = (row + col/4) % 3;
 
                     LEDMatrix.LedColor ledColor;
                     Ampel.State ampelState;
@@ -66,24 +67,24 @@ public class RaspiFunAmpelAndMatrix {
                     }
 
                     // playing with blinkrate in order to switch display off sometimes
-                    if(((row + col) % 2) == 0){
-                        leds.setBlinkRate(AdafruitLEDBackPack.BlinkRate.DISPLAY_OFF);
-                        ampel.setState(Ampel.State.OFF);
-                    }
-                    else{
-                        leds.setBlinkRate(AdafruitLEDBackPack.BlinkRate.BLINK_OFF);
+//                    if(((row + col) % 2) == 0){
+//                        leds.setBlinkRate(AdafruitLEDBackPack.BlinkRate.DISPLAY_OFF);
+//                        ampel.setState(Ampel.State.OFF);
+//                    }
+//                    else{
+//                        leds.setBlinkRate(AdafruitLEDBackPack.BlinkRate.BLINK_OFF);
                         ampel.setState(ampelState);
-                    }
+//                    }
 
                     // set brightness
-                    leds.setBrightness(row * 2);
+                    leds.setBrightness((row * 4 + col * 7) % 16);
 
                     leds.clear(false);
                     leds.setPixel(row, row % 2 == 0 ? col : 7-col, ledColor);
                     leds.writeDisplay();
 
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(50);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
