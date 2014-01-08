@@ -35,7 +35,7 @@ public class RaspiFunText {
     public static void main(String[] args) {
 
         LEDMatrix leds = LEDMatrixFactory.createLEDMatrix(I2C_BUS_NR, LED_PACK_ADDRESS);
-        leds.writeString("Hello World, how are you?", 500, false);
+        leds.writeString("Hello World, how are you?", 700, true);
 
     }
 

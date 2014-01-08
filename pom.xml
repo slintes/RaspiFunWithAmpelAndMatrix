@@ -34,7 +34,7 @@
         <dependency>
             <groupId>net.slintes.raspi</groupId>
             <artifactId>AdafruitLEDBackPack</artifactId>
-            <version>0.4</version>
+            <version>0.5</version>
         </dependency>
 
     </dependencies>
@@ -83,7 +83,7 @@
     <distributionManagement>
         <repository>
             <id>raspi</id>
-            <url>scp://pi:rr@192.168.121.238/home/pi/raspiFun</url>
+            <url>scp://pi:rr@192.168.121.237/home/pi/raspiFun</url>
         </repository>
     </distributionManagement>
 
